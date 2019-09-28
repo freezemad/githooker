@@ -1,0 +1,26 @@
+#!/bin/sh
+<<HEREDOC
+ Hook created by Githooker
+   Version: <%= version %>
+   At: <%= Time.now.to_s %>
+   Refer: https://github.com/freezemad/githooker
+
+  <%= `bundle info githooker` %>
+HEREDOC
+
+scriptCmd="githooker run"
+
+hookName=`basename "$0"`
+gitParams="$*"
+
+debug() {
+  [ "${GITHOOKER_DEBUG}" = "true" ] && echo "GitHooker:debug $1"
+}
+
+debug "$hookName hook started..."
+
+if ! command -v ruby >/dev/null 2>&1; then
+  echo "Can't find ruby in PATH, trying to find a node binary on your system"
+fi
+
+$scriptCmd $hookName "$gitParams"
