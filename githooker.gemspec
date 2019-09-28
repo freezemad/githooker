@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["iChen"]
   spec.email         = ["st.chenlei@gmail.com"]
 
-  spec.summary       = %q{A tool managing git hooks.}
-  spec.description   = %q{A tool providing a suit commandline-tools to manage git hooks. }
+  spec.summary       = %q{A Tool makes adding git hook easily.}
+  spec.description   = %q{A Tool makes adding git hook easily.}
   spec.homepage      = "https://github.com/freezemad/githooker"
   spec.license       = "MIT"
 
